@@ -1,3 +1,5 @@
+[Read the full documentation here](https://brpylko.github.io/micro-mvvm/index.html)
+
 This module is an MVVM framework intended to stick as close to vanilla APIs possible. The 2 main parts are a Component class and a Model class.
 
 ## micro-mvvm.Component
