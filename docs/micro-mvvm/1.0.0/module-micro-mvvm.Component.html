@@ -31,7 +31,7 @@
         <h2><span class="attribs"><span class="type-signature">(abstract) </span></span>
             <span class="ancestors"><a href="module-micro-mvvm.html">micro-mvvm</a>.</span>Component<span class="signature">(params)</span><span class="type-signature"></span></h2>
         
-            <div class="class-description">Class to implement a micro-mvvm web component.</div>
+            <div class="class-description"><p>Class to implement a micro-mvvm web component.</p></div>
         
     
 </header>
@@ -54,7 +54,7 @@
 
 
 <div class="description">
-    Setup the component. Protect against overriding important functions.
+    <p>Setup the component. Protect against overriding important functions.</p>
 </div>
 
 
@@ -116,7 +116,7 @@
 
             
 
-            <td class="description last">Object containing all the constructor's parameters.
+            <td class="description last"><p>Object containing all the constructor's parameters.</p>
                 <h6>Properties</h6>
                 
 
@@ -164,7 +164,7 @@
 
             
 
-            <td class="description last">A string used as this Component's innerHTML, a function that returns a string (called with this bound to the Component, and the Component's dataset as a parameter), or a &lt;template&gt; element to pull a document fragment from.</td>
+            <td class="description last"><p>A string used as this Component's innerHTML, a function that returns a string (called with this bound to the Component, and the Component's dataset as a parameter), or a &lt;template&gt; element to pull a document fragment from.</p></td>
         </tr>
 
     
@@ -193,7 +193,7 @@
 
             
 
-            <td class="description last">Works the same as params.template, but attaches a shadow DOM operates on this element's shadowRoot.</td>
+            <td class="description last"><p>Works the same as params.template, but attaches a shadow DOM operates on this element's shadowRoot.</p></td>
         </tr>
 
     
@@ -216,7 +216,7 @@
 
             
 
-            <td class="description last">If a template (not shadow template) is specified, insert the original children of the component at the time the DOM is parsed inside the first element that matches this selector after replacing the Component's innerHTML with the template.</td>
+            <td class="description last"><p>If a template (not shadow template) is specified, insert the original children of the component at the time the DOM is parsed inside the first element that matches this selector after replacing the Component's innerHTML with the template.</p></td>
         </tr>
 
     
@@ -294,7 +294,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        If the constructor is called on Component rather than a subclass.
+        <p>If the constructor is called on Component rather than a subclass.</p>
         </div>
     </dt>
     <dd></dd>
@@ -321,7 +321,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        If a subclass overrides any reserved Component methods (connected, connectedCallback, disconnectedCallback, or createDataBinding)
+        <p>If a subclass overrides any reserved Component methods (connected, connectedCallback, disconnectedCallback, or createDataBinding)</p>
         </div>
     </dt>
     <dd></dd>
@@ -387,7 +387,7 @@
 
 
 <div class="description">
-    Getter that returns the tag name this Component is registered as.
+    <p>Getter that returns the tag name this Component is registered as.</p>
 </div>
 
 
@@ -459,7 +459,7 @@
 
 
 <div class="description">
-    If shadow is specified in the constructor's parameters, the Component's attached ShadowRoot.
+    <p>If shadow is specified in the constructor's parameters, the Component's attached ShadowRoot.</p>
 </div>
 
 
@@ -546,7 +546,7 @@
 
 
 <div class="description">
-    create a new instance of this component as a DOM element.
+    <p>create a new instance of this component as a DOM element.</p>
 </div>
 
 
@@ -619,7 +619,7 @@
 
         
 <div class="param-desc">
-    A new instance of this component that can be inserted into the DOM.
+    <p>A new instance of this component that can be inserted into the DOM.</p>
 </div>
 
 
@@ -656,7 +656,7 @@
 
 
 <div class="description">
-    Register this Component with the specified HTML tag. Can only be called on subclasses of Component.
+    <p>Register this Component with the specified HTML tag. Can only be called on subclasses of Component.</p>
 </div>
 
 
@@ -708,7 +708,7 @@
 
             
 
-            <td class="description last">The element name to register this Component as. Must be a <a href="https://html.spec.whatwg.org/multipage/custom-elements.html#valid-custom-element-name">valid custom element name</a></td>
+            <td class="description last"><p>The element name to register this Component as. Must be a <a href="https://html.spec.whatwg.org/multipage/custom-elements.html#valid-custom-element-name">valid custom element name</a></p></td>
         </tr>
 
     
@@ -779,7 +779,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        If register() is called on Component rather than a subclass.
+        <p>If register() is called on Component rather than a subclass.</p>
         </div>
     </dt>
     <dd></dd>
@@ -806,7 +806,7 @@
 <dl>
     <dt>
         <div class="param-desc">
-        If register() has already been called on this class.
+        <p>If register() has already been called on this class.</p>
         </div>
     </dt>
     <dd></dd>
@@ -834,7 +834,7 @@
 
         
 <div class="param-desc">
-    Returns the class register() was called on, making it possible to write something like "export default MyComponentSubclass.register('my-component-sublass')"
+    <p>Returns the class register() was called on, making it possible to write something like &quot;export default MyComponentSubclass.register('my-component-sublass')&quot;</p>
 </div>
 
 
@@ -871,7 +871,7 @@
 
 
 <div class="description">
-    A promise that resolves at the earliest the same animation frame that initialize() is called.
+    <p>A promise that resolves at the earliest the same animation frame that initialize() is called.</p>
 </div>
 
 
@@ -959,7 +959,7 @@
 
 
 <div class="description">
-    Bind a data- attribute to a function
+    <p>Bind a data- attribute to a function</p>
 </div>
 
 
@@ -1011,7 +1011,7 @@
 
             
 
-            <td class="description last">kebab-case name of the data- attribute (without the data- prefix) to listen to</td>
+            <td class="description last"><p>kebab-case name of the data- attribute (without the data- prefix) to listen to</p></td>
         </tr>
 
     
@@ -1034,7 +1034,7 @@
 
             
 
-            <td class="description last">The callback that handles the change</td>
+            <td class="description last"><p>The callback that handles the change</p></td>
         </tr>
 
     
@@ -1119,7 +1119,7 @@
 
 
 <div class="description">
-    Called when the component is connected to the DOM.
+    <p>Called when the component is connected to the DOM.</p>
 </div>
 
 
@@ -1166,7 +1166,7 @@
 
             
 
-            <td class="description last">The original children of this element when the DOM was parsed, before they get replaced by this component's template (if applicable)</td>
+            <td class="description last"><p>The original children of this element when the DOM was parsed, before they get replaced by this component's template (if applicable)</p></td>
         </tr>
 
     
@@ -1257,7 +1257,7 @@
 
 
 <div class="description">
-    Called when a bound data- attribute changes
+    <p>Called when a bound data- attribute changes</p>
 </div>
 
 
@@ -1309,7 +1309,7 @@
 
             
 
-            <td class="description last">The new value of the attribute</td>
+            <td class="description last"><p>The new value of the attribute</p></td>
         </tr>
 
     
@@ -1400,7 +1400,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Sat Apr 17 2021 18:19:39 GMT-0400 (Eastern Daylight Time)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Sat Apr 17 2021 18:27:23 GMT-0400 (Eastern Daylight Time)
 </footer>
 
 <script> prettyPrint(); </script>
