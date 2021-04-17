@@ -1,0 +1,29 @@
+{
+  "name": "micro-mvvm",
+  "version": "1.0.0",
+  "description": "Tiny MVVM framework integrating as tightly with vanilla JavaScript and DOM APIs as possible",
+  "browser": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "node test/server.js",
+    "docs": "jsdoc lib README.md package.json -d ./docs/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brpylko/micro-mvvm.git"
+  },
+  "author": "brpylko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brpylko/micro-mvvm/issues"
+  },
+  "homepage": "https://github.com/brpylko/micro-mvvm#readme",
+  "devDependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "jsdoc": "^3.6.6"
+  }
+}

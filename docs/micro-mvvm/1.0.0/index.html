@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Home</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Home</h1>
+
+    
+
+
+
+    
+
+
+    <h3>micro-mvvm 1.0.0</h3>
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+
+    <section>
+        <article><p>This module is an MVVM framework intended to stick as close to vanilla APIs possible. The 2 main parts are a Component class and a Model class.</p>
+<h2>micro-mvvm.Component</h2>
+<p>The Component class is used to define new HTML elements with complex behaviors:</p>
+<pre class="prettyprint source lang-js"><code>import * as μ from &quot;/micro-mvvm&quot;
+
+class CounterTest extends μ.Component {
+    constructor() {
+        super({
+            template: μ.html`
+            &lt;span data-bind=&quot;counter-parameter:innerText&quot;>
+            &lt;/span>`
+        })
+    }
+
+    initialize() {
+        setInterval(() => {
+            this.dataset.counterParameter = 1 + (parseInt(this.dataset.counterParameter) || 0)
+        }, 1000)
+    }
+}
+
+export default CounterTest.register(&quot;counter-test&quot;)
+</code></pre>
+<pre class="prettyprint source lang-html"><code>&lt;div>
+    This counter should start at 5 and go up every second:
+    &lt;counter-test data-counter-parameter=5>&lt;/counter-test>
+&lt;/div>
+</code></pre>
+<h2>micro-mvvm.Model</h2>
+<p>The Model class is used to communicate with an HTTP API. A single Model instance can be used for an entire API, or Model can be subclassed to represent different data models.</p>
+<h3>Entire API Style</h3>
+<pre class="prettyprint source lang-js"><code>import * as μ from &quot;micro-mvvm&quot;
+
+const API = new μ.Model()
+
+API.addRoute(&quot;dashboard&quot;, &quot;/api/dashboard&quot;, μ.Model.Transform.json)
+API.addRoute(&quot;change_password&quot;, &quot;/api/change_password&quot;, μ.Model.Transform.ok, {method: &quot;post&quot;})
+
+export default API
+</code></pre>
+<pre class="prettyprint source lang-js"><code>import API from &quot;./[path-to-api-file].js
+
+const dashboard_data = await API.dashboard()
+// do something with the retrieved data
+
+// event listener or similar
+if (!await API.change_password({body: {old_password, new_password}})) {
+    alert(&quot;Error changing password&quot;)
+}
+</code></pre>
+<h3>Data Model Style</h3>
+<pre class="prettyprint source lang-js"><code>class UserTest extends μ.Model {
+    constructor() {
+        super(location.origin + &quot;/api/user&quot;)
+        this.addRoute(&quot;load_data&quot;, &quot;&quot;, μ.Model.Transform.assign)
+
+        this.createDataBinding(&quot;id&quot;)
+        this.createDataBinding(&quot;username&quot;)
+    }
+
+    async initialize(id) {
+        await this.load_data({query: {id}})
+    }
+}
+
+const user = new UserTest()
+user.initialize(1).then(() => console.log(user.toJSON()))
+//logs {id: &quot;...&quot;, username: &quot;...&quot;}
+</code></pre>
+<h2>micro-mvvm.html</h2>
+<p>Template tagging function that automatically recursively joins arrays with an empty string and calls any functions that are present as substitutions.</p>
+<pre class="prettyprint source lang-js"><code>const output = μ.html`&lt;div>${() => [&quot;Separate &quot;, &quot;Tokens &quot;, &quot;Here&quot;]}&lt;/div>`
+//output: &lt;div>Separate Tokens Here&lt;/div>
+</code></pre>
+<h2>Compatibility</h2>
+<p>This module requires the following features:</p>
+<ul>
+<li><code>Symbol</code></li>
+<li><code>Promise</code></li>
+<li>classes</li>
+<li><code>async</code>/<code>await</code></li>
+<li><code>const</code></li>
+<li>rest/spread operator</li>
+<li>fetch API</li>
+<li>custom elements</li>
+<li><code>ShadowRoot</code></li>
+<li><code>Proxy</code></li>
+<li><code>Reflect</code></li>
+<li><code>CustomEvent</code></li>
+<li><code>MutationObserver</code></li>
+</ul></article>
+    </section>
+
+
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="module-micro-mvvm.html">micro-mvvm</a></li></ul><h3>Externals</h3><ul><li><a href="external-AbortController.html">AbortController</a></li><li><a href="external-AbortSignal.html">AbortSignal</a></li><li><a href="external-ArrayBuffer.html">ArrayBuffer</a></li><li><a href="external-Blob.html">Blob</a></li><li><a href="external-CustomEvent.html">CustomEvent</a></li><li><a href="external-EventTarget.html">EventTarget</a></li><li><a href="external-FormData.html">FormData</a></li><li><a href="external-Headers.html">Headers</a></li><li><a href="external-HTMLElement.html">HTMLElement</a></li><li><a href="external-HTMLTemplateElement.html">HTMLTemplateElement</a></li><li><a href="external-Proxy.html">Proxy</a></li><li><a href="external-ReadableStream.html">ReadableStream</a></li><li><a href="external-ReadableStreamDefaultReader.html">ReadableStreamDefaultReader</a></li><li><a href="external-Response.html">Response</a></li><li><a href="external-ShadowRoot.html">ShadowRoot</a></li><li><a href="external-TypedArray.html">TypedArray</a></li><li><a href="external-URLSearchParams.html">URLSearchParams</a></li></ul><h3>Classes</h3><ul><li><a href="module-micro-mvvm.Component.html">Component</a></li><li><a href="module-micro-mvvm.Model.html">Model</a></li></ul><h3>Events</h3><ul><li><a href="module-micro-mvvm.Model.html#.event:FailureEvent">FailureEvent</a></li><li><a href="module-micro-mvvm.Model.html#.event:RequestEvent">RequestEvent</a></li><li><a href="module-micro-mvvm.Model.html#.event:ResponseEvent">ResponseEvent</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.6</a> on Sat Apr 17 2021 18:19:39 GMT-0400 (Eastern Daylight Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
