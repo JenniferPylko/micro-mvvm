@@ -53,7 +53,7 @@ export default API
 ```
 
 ```js
-import API from "./[path-to-api-file].js
+import API from "./[path-to-api-file].js"
 
 const dashboard_data = await API.dashboard()
 // do something with the retrieved data
